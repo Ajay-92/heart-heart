@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-container button:hover {
+    background-color: #45a049;
+}
+
+.heart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.heart {
+    width: 100px;
+    height: 90px;
+    position: relative;
+    background-color: #a12ec4;
+    transform: rotate(-45deg);
+    animation: roll 4s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 100px;
+    height: 90px;
+    background-color: #a12ec4;
+    border-radius: 50%;
+    position: absolute;
+    transition: background-color 0.3s ease;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+.message {
+    position: absolute;
+    transform: rotate(45deg);
+    color: rgb(0, 0, 106);
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+@keyframes roll {
+    0% {
+        transform: rotate(-45deg) translateX(0);
+    }
+    50% {
+        transform: rotate(-45deg) translateX(300px);
+    }
+    100% {
+        transform: rotate(-45deg) translateX(0);
+    }
+}
+
+/* Hover Effect */
+.heart:hover {
+    transform: rotate(-45deg) scale(1.2);
+    background-color: #8d41ea;
+    animation-duration: 2s;
+}
+
+.heart:hover::before,
+.heart:hover::after {
+    background-color: #8d41ea;
+}
